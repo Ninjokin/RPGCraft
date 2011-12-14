@@ -6,7 +6,7 @@ import org.bukkit.event.Event.Type;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import tk.ninjokin.rpgcraft.listener.PlayerListen;
+import tk.ninjokin.rpgcraft.listener.BlockListen;
 
 public class RPGCraft extends JavaPlugin {
 
@@ -15,7 +15,7 @@ public class RPGCraft extends JavaPlugin {
 		saveConfig();
 		
 		PluginManager PM = getServer().getPluginManager();
-		PM.registerEvent(Type.BLOCK_BREAK, new PlayerListen(), Priority.Low, this);
+		PM.registerEvent(Type.BLOCK_BREAK, new BlockListen(), Priority.Low, this);
 		
 		RL.Logging("Plugin now enabled!", Logging.NORMAL);
 	}
