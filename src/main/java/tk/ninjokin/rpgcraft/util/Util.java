@@ -27,6 +27,10 @@ public class Util {
 		return exp.getExpFromInt(rpgc.getConfigInt(skill.toString() + "." + p.getName()));
 	}
 	
+	public void addPlayerExp(String path, int amount) {
+		rpgc.addExperience(path, amount);
+	}
+	
 	private Level lvl = new Level();
 	private Experience exp = new Experience();
 	private RPGCraft rpgc = new RPGCraft();
