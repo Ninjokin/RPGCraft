@@ -26,13 +26,8 @@ public class RPGCraft extends JavaPlugin {
 		RL.Logging("Plugin now disabled!", Logging.NORMAL);
 	}
 	
-	public int getConfigInt(String path) {
-		return config.getInt(path);
-	}
-	
-	public void addExperience(String path, int amount) {
-		config.set(path, config.getInt(path) + amount);
-		saveConfig();
+	public Configuration returnConfig() {
+		return config;
 	}
 	
 	private Log RL = new Log();
