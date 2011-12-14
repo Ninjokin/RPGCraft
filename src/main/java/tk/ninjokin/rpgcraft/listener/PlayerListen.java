@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerListener;
 
+import tk.ninjokin.rpgcraft.RPGCraft;
 import tk.ninjokin.rpgcraft.util.Skill;
 import tk.ninjokin.rpgcraft.util.Util;
 
@@ -16,8 +17,10 @@ public class PlayerListen extends PlayerListener {
 			skill = Skill.MINING;
 		}
 		u.getPlayerLevel(event.getPlayer(), skill);
+		rpgc.addExperience(skill.toString() + "." + event.getPlayer().getName(), 1);
 	}
 	private Util u = new Util();
+	private RPGCraft rpgc = new RPGCraft();
 	
 	private Skill skill;
 }

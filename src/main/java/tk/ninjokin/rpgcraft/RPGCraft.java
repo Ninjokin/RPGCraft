@@ -12,6 +12,7 @@ public class RPGCraft extends JavaPlugin {
 
 	public void onEnable() {
 		config = getConfig();
+		saveConfig();
 		
 		PluginManager PM = getServer().getPluginManager();
 		PM.registerEvent(Type.BLOCK_BREAK, new PlayerListen(), Priority.Low, this);
@@ -25,6 +26,10 @@ public class RPGCraft extends JavaPlugin {
 	
 	public int getConfigInt(String path) {
 		return config.getInt(path);
+	}
+	
+	public void addExperience(String path, int amount) {
+		config.set(path, config.getInt(path) + amount);
 	}
 	
 	private Log RL = new Log();
